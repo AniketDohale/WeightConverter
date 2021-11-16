@@ -1,100 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <style>
-        * {
-            text-align: center;
-        }
+      * {
+        text-align: center;
+      }
 
-        body {
-            margin: 0;
-            padding: 0;
-            height: 50vh;
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 50vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-        #content {
-            height: 150vh;
-        }
+      #content {
+        height: 150vh;
+      }
 
-        .btn,
-        .btn1,
-        .btn2,
-        .btn3 {
-            font-family: "Roboto", sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            background: #1E90FF;
-            width: 160px;
-            padding: 20px;
-            text-align: center;
-            margin-right: 16px;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #fff;
-            border-radius: 5px;
+      .btn,
+      .btn1,
+      .btn2,
+      .btn3 {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        background: #1e90ff;
+        width: 160px;
+        padding: 20px;
+        text-align: center;
+        margin-right: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 5px;
+      }
 
-        }
+      h1 {
+        text-transform: uppercase;
+      }
 
-        h1 {
-            text-transform: uppercase;
-        }
-
-        .btn1,
-        .btn2,
-        .btn3 {
-            padding-inline: 30px;
-        }
-
-        #clear {
-            border-radius: 4px;
-            width: 120px;
-            padding: 5px;
-            background-color: #1E90FF;
-            transform: translateX(2px);
-            color: white;
-        }
-
-        .back {
-            border-radius: 4px;
-            width: 120px;
-            padding: 5px;
-            background-color: #1E90FF;
-            color: white;
-            margin-right: 16 px;
-        }
+      .btn1,
+      .btn2,
+      .btn3 {
+        padding-inline: 30px;
+      }
     </style>
 
     <title>Weight Converter</title>
-    <link rel="stylesheet">
-</head>
+    <link rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
+    <h1>Weight Converter</h1>
 
-    <h1> Weight Converter </h1>
+    <div style="margin: 50px">
+      <a onclick="{kg()}" class="btn">Kilogram</a>
 
-    <div style="margin: 50px;">
+      <a onclick="{po()}" class="btn1">Pounds</a>
 
-        <a onclick="{kg()}" class="btn">Kilogram</a>
+      <a onclick="{gr()}" class="btn2">Grams</a>
 
-        <a onclick="{po()}" class="btn1">Pounds</a>
-
-        <a onclick="{gr()}" class="btn2">Grams</a>
-
-        <a onclick="{ou()}" class="btn3">Ounce</a>
-
+      <a onclick="{ou()}" class="btn3">Ounce</a>
     </div>
-    <div id="content">
 
-    </div>
+    <div id="content"></div>
+
     <script>
-        const kg = () => {
-            content = document.getElementById('content')
-            content.innerHTML = `<form><p>
+      const kg = () => {
+        content = document.getElementById("content");
+        content.innerHTML = `<form><p>
                 <input id="inputKilograms" type="number" placeholder="Kilograms" oninput="weightConverterKG(this.value)"
                 onchange="weightConverterKG(this.value)">
 
@@ -104,12 +81,12 @@
 
                 <p>Ounces: <span id="outputOunces"></span></p>
 
-                <p>Grams: <span id="outputGrams"></span></p>`
-        }
+                <p>Grams: <span id="outputGrams"></span></p>`;
+      };
 
-        const ou = () => {
-            content = document.getElementById('content')
-            content.innerHTML = `<p>
+      const ou = () => {
+        content = document.getElementById("content");
+        content.innerHTML = `<p>
                 <input id="inputOunces" type="number" placeholder="Ounces" oninput="weightConverterOU(this.value)"
                     onchange="weightConverterOU(this.value)">
                 </p>
@@ -118,12 +95,12 @@
 
                 <p>Kilograms: <span id="outputKilograms"></span></p>
 
-                <p>Grams: <span id="outputGrams"></span></p>`
-        }
+                <p>Grams: <span id="outputGrams"></span></p>`;
+      };
 
-        const po = () => {
-            content = document.getElementById('content')
-            content.innerHTML = `<p>
+      const po = () => {
+        content = document.getElementById("content");
+        content.innerHTML = `<p>
                 <input id="inputPounds" type="number" placeholder="Pounds" oninput="weightConverterPO(this.value)"
                 onchange="weightConverterPO(this.value)">
                 </p>
@@ -132,12 +109,12 @@
 
                 <p>Ounces: <span id="outputOunces"></span></p>
 
-                <p>Grams: <span id="outputGrams"></span></p>`
-        }
+                <p>Grams: <span id="outputGrams"></span></p>`;
+      };
 
-        const gr = () => {
-            content = document.getElementById('content')
-            content.innerHTML = `<p>
+      const gr = () => {
+        content = document.getElementById("content");
+        content.innerHTML = `<p>
                 <input id="inputGrams" type="number" placeholder="Grams" oninput="weightConverterGR(this.value)"
                     onchange="weightConverterGR(this.value)">
                 </p>
@@ -146,36 +123,32 @@
 
                 <p>Ounces: <span id="outputOunces"></span></p>
 
-                <p>Kilograms: <span id="outputKilograms"></span></p>`
-        }
+                <p>Kilograms: <span id="outputKilograms"></span></p>`;
+      };
 
-        function weightConverterKG(valNum) {
-            document.getElementById("outputPounds").innerHTML = valNum * 2.2046;
-            document.getElementById("outputOunces").innerHTML = valNum * 35.274;
-            document.getElementById("outputGrams").innerHTML = valNum * 1000;
-        }
+      function weightConverterKG(valNum) {
+        document.getElementById("outputPounds").innerHTML = valNum * 2.2046;
+        document.getElementById("outputOunces").innerHTML = valNum * 35.274;
+        document.getElementById("outputGrams").innerHTML = valNum * 1000;
+      }
 
-        function weightConverterOU(valNum) {
-            document.getElementById("outputPounds").innerHTML = valNum * 0.0625;
-            document.getElementById("outputKilograms").innerHTML = valNum / 35.274;
-            document.getElementById("outputGrams").innerHTML = valNum / 0.035274;
-        }
+      function weightConverterOU(valNum) {
+        document.getElementById("outputPounds").innerHTML = valNum * 0.0625;
+        document.getElementById("outputKilograms").innerHTML = valNum / 35.274;
+        document.getElementById("outputGrams").innerHTML = valNum / 0.035274;
+      }
 
-        function weightConverterPO(valNum) {
-            document.getElementById("outputKilograms").innerHTML = valNum / 2.2046;
-            document.getElementById("outputOunces").innerHTML = valNum * 16;
-            document.getElementById("outputGrams").innerHTML = valNum / 0.0022046;
-        }
+      function weightConverterPO(valNum) {
+        document.getElementById("outputKilograms").innerHTML = valNum / 2.2046;
+        document.getElementById("outputOunces").innerHTML = valNum * 16;
+        document.getElementById("outputGrams").innerHTML = valNum / 0.0022046;
+      }
 
-        function weightConverterGR(valNum) {
-            document.getElementById("outputPounds").innerHTML = valNum * 0.0022046;
-            document.getElementById("outputOunces").innerHTML = valNum * 0.035274;
-            document.getElementById("outputKilograms").innerHTML = valNum / 1000;
-        }
-
-
+      function weightConverterGR(valNum) {
+        document.getElementById("outputPounds").innerHTML = valNum * 0.0022046;
+        document.getElementById("outputOunces").innerHTML = valNum * 0.035274;
+        document.getElementById("outputKilograms").innerHTML = valNum / 1000;
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
